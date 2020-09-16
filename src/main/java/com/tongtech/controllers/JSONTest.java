@@ -15,6 +15,8 @@ public class JSONTest {
     private static  String filePath ;
 
     private static  String filePath1 ;//更新2
+    
+    private static  String filePath1 ;//远程更新
 
     static {
         try {
