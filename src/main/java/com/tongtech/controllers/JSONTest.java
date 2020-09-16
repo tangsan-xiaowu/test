@@ -18,6 +18,8 @@ public class JSONTest {
     
     private static  String filePath2 ;
 
+    private static  String filePath3 ;
+
     static {
         try {
              filePath = JSONTest.class.getClassLoader().getResource("timestamp.properties").toURI().getPath();
