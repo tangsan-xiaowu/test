@@ -14,7 +14,7 @@ import java.util.Properties;
 public class JSONTest {
     private static  String filePath ;
 
-    private static  String filePath1 ;//更新
+    private static  String filePath1 ;//更新2
 
     static {
         try {
