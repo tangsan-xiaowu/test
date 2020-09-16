@@ -19,6 +19,8 @@ public class JSONTest {
     private static  String filePath2 ;
 
     private static  String filePath3 ;
+    
+    private static  String filePath4 ;
 
     static {
         try {
