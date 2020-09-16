@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tongtech.mapper.OrderMapper">
+
+    <select id="queryOrdersByStatus" resultType="Orders">
+        select * from orders where `status` = '3' limit 5
+    </select>
+
+    <select id="updateOrderByOrderNum" resultType="int">
+        UPDATE orders set `status`='1'
+        <where>
+            <if test="list!=null">
+                <foreach collection="list" item="item_num" separator=" or " open="(" close=")">
+                     order_num = #{item_num}
+                </foreach>
+            </if>
+        </where>
+    </select>
+</mapper>

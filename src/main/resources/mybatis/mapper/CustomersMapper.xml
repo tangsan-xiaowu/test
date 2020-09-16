@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.flyflyyun.mapper.CustomersMapper">
+
+    <select id="selectCustomersById" resultType="Customers">
+        select * from customers where cust_id = #{id}
+    </select>
+
+    <select id="selectCustomersByExample" resultType="Customers">
+        select * from customers
+        <where>
+            <if test="custId!=null and custId!=0">
+                AND cust_id = #{custId}
+            </if>
+
+            <if test="custName!=null and custName.trim()!=''">
+                AND cust_city = #{custName}
+            </if>
+        </where>
+
+    </select>
+
+    <select id="selectRequest" resultType="hashmap">
+        select cust_id,cust_name,cust_city from customers where 1=1
+        <if test="cust_id!=null and cust_id!=0">
+            AND cust_id = #{cust_id}
+        </if>
+
+        <if test="cust_city!=null and cust_city.trim()!=''">
+            AND cust_city = #{cust_city}
+        </if>
+
+    </select>
+
+</mapper>
